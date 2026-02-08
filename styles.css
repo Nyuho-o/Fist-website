@@ -1,0 +1,383 @@
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f5f5;
+  --text: #111111;
+  --muted: #555555;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --border: #e6e6e6;
+  --header-bg: #222222;
+  --header-fg: #ffffff;
+  --link: #0b57d0;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+
+  --s-1: 6px;
+  --s-2: 10px;
+  --s-3: 14px;
+  --s-4: 20px;
+  --s-5: 30px;
+  --s-6: 44px;
+
+  --fs-1: 14px;
+  --fs-2: 16px;
+  --fs-3: 20px;
+  --fs-4: 28px;
+
+  --content: 900px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: var(--fs-2);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--s-2);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--fs-4);
+}
+
+h2 {
+  font-size: var(--fs-3);
+}
+
+p {
+  margin: 0 0 var(--s-3);
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+/* Header + nav */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4);
+  color: var(--header-fg);
+  background: var(--header-bg);
+}
+
+header > div {
+  max-width: 640px;
+}
+
+#site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+#site-nav a {
+  display: inline-block;
+  padding: var(--s-1) var(--s-2);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--header-fg);
+}
+
+#site-nav a:hover,
+#site-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+#site-nav a.active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.nav-toggle {
+  display: none;
+  padding: var(--s-1) var(--s-2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--header-fg);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+/* Layout */
+main {
+  max-width: var(--content);
+  margin: var(--s-6) auto;
+  padding: 0 var(--s-4);
+}
+
+section {
+  margin-bottom: var(--s-5);
+  padding: var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  padding: var(--s-4);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--radius-sm);
+  background: var(--header-bg);
+  color: var(--header-fg);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  filter: brightness(1.08);
+  outline: none;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--header-bg);
+}
+
+.btn-small {
+  padding: var(--s-1) var(--s-2);
+  font-size: var(--fs-1);
+}
+
+/* Home page */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+}
+
+.hero img {
+  width: min(360px, 40vw);
+}
+
+.kicker {
+  margin: 0 0 var(--s-2);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-3);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.pill {
+  padding: var(--s-1) var(--s-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: var(--fs-1);
+  font-weight: 700;
+  background: var(--surface-2);
+}
+
+/* Cards and grid */
+.card-row {
+  display: flex;
+  gap: var(--s-4);
+}
+
+.card,
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.card {
+  flex: 1;
+  padding: var(--s-3);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-4);
+}
+
+.project-card {
+  padding: var(--s-4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  margin-bottom: var(--s-3);
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin-bottom: var(--s-2);
+  font-size: var(--fs-3);
+}
+
+.project-card p {
+  margin-bottom: var(--s-3);
+}
+
+.card:hover,
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Lists + links in content */
+section ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+section li {
+  margin-bottom: var(--s-1);
+}
+
+main a:not(.btn):not(#site-nav a) {
+  color: var(--link);
+  text-underline-offset: 2px;
+}
+
+main a:not(.btn):not(#site-nav a):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Form */
+.form {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.field {
+  display: grid;
+  gap: var(--s-1);
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  background: var(--surface);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #999999;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  #site-nav {
+    display: none;
+    width: 100%;
+    margin-top: var(--s-2);
+    flex-direction: column;
+  }
+
+  #site-nav.is-open {
+    display: flex;
+  }
+
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-row {
+    flex-direction: column;
+  }
+}

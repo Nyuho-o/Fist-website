@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>GLUED TO THE WEB</h1>
+      <p>Learning new things and development. It's challenging!</p>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
+
+    <nav id="site-nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker">Portfolio in progress</p>
+        <h2>Hi, I'm Nyuh. I'm learning frontend development.</h2>
+        <p>
+          I'm building projects using HTML, CSS, and JavaScript. This site is my training ground.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="projects.html">See projects</a>
+          <a class="btn btn-secondary" href="about.html">About me</a>
+        </div>
+      </div>
+
+      <img src="images/testpourwebsite.jpg" alt="Hero image" />
+    </section>
+
+    <section>
+      <h2>Skills I'm building</h2>
+      <div class="pill-row">
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">Responsive Design</span>
+        <span class="pill">Flexbox</span>
+        <span class="pill">Grid</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured projects</h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Landing Page</h3>
+          <p>Practicing layout, spacing, and components.</p>
+          <a class="btn btn-small" href="projects.html">View</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Portfolio Layout</h3>
+          <p>Multi-page site with responsive sections.</p>
+          <a class="btn btn-small" href="projects.html">View</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Grid Gallery</h3>
+          <p>Practicing CSS Grid and breakpoints.</p>
+          <a class="btn btn-small" href="projects.html">View</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Next goals</h2>
+      <ul>
+        <li>Ship 3 polished static pages</li>
+        <li>Add a contact form page</li>
+        <li>Start JavaScript basics after CSS is solid</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Nyuh</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
